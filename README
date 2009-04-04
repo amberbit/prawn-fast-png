@@ -1,0 +1,20 @@
+prawn-fast-png
+
+DESCRIPTION:
+Deals with Prawn PDF library poor performance when embeding PNG images with alpha channel
+
+TESTS:
+To run prawn's tests you need to execute first
+
+git submodule init
+git submodule update
+
+cd vendor/prawn
+git submodule init
+git submodule update
+
+cd ../..
+rake
+
+GitHub:
+http://github.com/amberbit/prawn-fast-png/tree/master
