@@ -1,3 +1,6 @@
+# Extracts the data from a PNG that is needed for embedding. Uses RMagick to
+# separate RGB and A channels.
+
 require 'prawn'
 require 'RMagick'
 
@@ -6,7 +9,7 @@ module Prawn
     class PNG
       alias_method :prawn_fast_png_old_initialize, :initialize
 
-      def initialize(data)
+      def initialize(data) #:nodoc:
         @prawn_fast_png_data = data
         prawn_fast_png_old_initialize(data)
         @prawn_fast_png_data = nil
