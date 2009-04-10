@@ -1,8 +1,4 @@
-unless Object.const_defined?(:Prawn)
-  raise "prawn must be required before prawn-fast-png"
-end
-
-require 'rubygems'
+require 'prawn'
 require 'RMagick'
 
 module Prawn

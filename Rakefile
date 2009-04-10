@@ -6,7 +6,7 @@ task :test do
   specs.map! { |spec| "\"#{spec}\""}
 
   cmd = %Q{/usr/bin/ruby -I"vendor/prawn/lib" -I"vendor/prawn" -I"lib"
-    -r 'prawn' -r 'prawn/fast_png'
+    -r 'rubygems' -r 'prawn/fast_png'
     "/usr/lib/ruby/gems/1.8/gems/rake-0.8.4/lib/rake/rake_test_loader.rb"
     #{specs.join(' ')}}
   cmd.gsub!("\n", '')
