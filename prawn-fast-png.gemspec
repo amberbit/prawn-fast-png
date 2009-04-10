@@ -2,7 +2,6 @@ Gem::Specification.new do |s|
   s.name = s.rubyforge_project = "prawn-fast-png"
   s.homepage = "http://github.com/amberbit/prawn-fast-png"
   s.version = "0.1.1"
-  s.date = "2009-04-10"
   s.authors = ["Wojciech Piekutowski"]
   s.email = "wojciech@piekutowski.net"
   s.files = ['lib/prawn/fast_png.rb', 'lib/prawn/images/png.rb']
