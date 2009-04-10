@@ -12,6 +12,8 @@ module Prawn
         @prawn_fast_png_data = nil
       end
 
+      private
+
       def unfilter_image_data
         img = Magick::Image.from_blob(@prawn_fast_png_data).first
 
