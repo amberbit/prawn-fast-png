@@ -1,5 +1,6 @@
 Gem::Specification.new do |s|
-  s.name = s.rubyforge_project = "prawn-fast-png"
+  s.name = "prawn-fast-png"
+  s.rubyforge_project = "prawn-fast-png"
   s.homepage = "http://github.com/amberbit/prawn-fast-png"
   s.version = "0.1.1"
   s.authors = ["Wojciech Piekutowski"]
