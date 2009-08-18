@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name = "prawn-fast-png"
   s.rubyforge_project = "prawn-fast-png"
   s.homepage = "http://github.com/amberbit/prawn-fast-png"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
   s.authors = ["Wojciech Piekutowski"]
   s.email = "wojciech@piekutowski.net"
   s.files = ['lib/prawn/fast_png.rb', 'lib/prawn/images/png_patch.rb']
@@ -17,3 +17,4 @@ Gem::Specification.new do |s|
   s.rdoc_options << "--title" << "prawn-fast-png documentation" <<
                     "--main"  << "README.rdoc" << "-q"
 end
+
