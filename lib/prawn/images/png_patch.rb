@@ -12,7 +12,6 @@ module Prawn
       def initialize(data) #:nodoc:
         @prawn_fast_png_data = data
         prawn_fast_png_old_initialize(data)
-        @prawn_fast_png_data = nil
       end
 
       private
@@ -28,7 +27,11 @@ module Prawn
 
         @img_data      = Zlib::Deflate.deflate(img_data)
         @alpha_channel = Zlib::Deflate.deflate(alpha_channel)
+
+        # image blob not needed anymore, let GC take care of it
+        @prawn_fast_png_data = nil
       end
     end
   end
 end
+
