@@ -15,20 +15,14 @@ This gem doesn't introduce any API changes, so please refer to
   pdf.render_file 'example.pdf'
 
 = Running Prawn's tests
-To run tests you need to execute first...
 
-  git submodule init
-  git submodule update
-
-  cd vendor/prawn
-  git submodule init
-  git submodule update
-
-  cd ../..
-
-...then...
+To test against the lastest Prawn gem installed
 
   rake test
+
+or using a specific version
+
+  rake test PRAWN_VERSION=0.5.1
 
 = GitHub
 http://github.com/amberbit/prawn-fast-png
@@ -39,3 +33,4 @@ http://groups.google.com/group/prawn-ruby
 =Credits
 prawn-fast-png is maintained by {Wojciech Piekutowski}[http://piekutowski.net],
 and is funded by AmberBit[http://amberbit.com].
+
