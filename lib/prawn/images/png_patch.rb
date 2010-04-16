@@ -32,7 +32,9 @@ module Prawn
           # export_pixels_to_str returns little-endian data, but we need big-endian
           # so it's usually more efficient to use export_pixels and pack
           img_data      = img.export_pixels(0, 0, width, height, format).pack('n*')
-          alpha_channel = img.export_pixels(0, 0, width, height, 'A').pack('n*')
+          # Downsample 16-bit alpha channel to 8 bits for Adobe Reader support
+          alpha_channel = img.export_pixels(0, 0, width, height, 'A').
+            map{ |byte| byte >> 8 }.pack('c*')
         else
           raise Errors::UnsupportedImageType, "Can't handle #{bits}-bit PNG images"
         end
