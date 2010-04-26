@@ -34,10 +34,19 @@ module Prawn
         when 16
           # export_pixels_to_str returns little-endian data, but we need big-endian
           # so it's usually more efficient to use export_pixels and pack
-          img_data      = img.export_pixels(0, 0, width, height, format).pack('n*')
-          # Downsample 16-bit alpha channel to 8 bits for Adobe Reader support
-          alpha_channel = img.export_pixels(0, 0, width, height, 'A').
-            map{ |byte| byte >> 8 }.pack('c*')
+          img_data   = img.export_pixels(0, 0, width, height, format).pack('n*')
+          alpha_data = img.export_pixels(0, 0, width, height, 'A')
+          alpha_bits = respond_to?(:alpha_channel_bits) ? alpha_channel_bits : 16
+          alpha_channel =
+            case alpha_bits
+            when 8
+              # downsample 16-bit alpha channel to 8 bits for Adobe Reader support
+              alpha_data.map { |byte| byte >> 8 }.pack('c*')
+            when 16
+              alpha_data.pack('n*')
+            else
+              raise Errors::UnsupportedImageType, "Can't create #{alpha_channel_bits}-bit alpha channel"
+            end
         else
           raise Errors::UnsupportedImageType, "Can't handle #{bits}-bit PNG images"
         end
