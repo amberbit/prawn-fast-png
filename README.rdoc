@@ -16,13 +16,17 @@ This gem doesn't introduce any API changes, so please refer to
 
 = Running Prawn's tests
 
-To test against the lastest Prawn gem installed
+  cd path_to_prawn_src
+  git tag # available versions
+  git checkout version.tag
+  # or
+  git checkout master
+  cd -
+  rake test PRAWN_DIR=path_to_prawn_src
 
-  rake test
+for versions 0.5.1-0.8.3 add PRAWN_REQUIRE=prawn/core option
 
-or using a specific version
-
-  rake test PRAWN_VERSION=0.5.1
+  rake test PRAWN_DIR=path_to_prawn_src PRAWN_REQUIRE=prawn/core
 
 = GitHub
 http://github.com/amberbit/prawn-fast-png
