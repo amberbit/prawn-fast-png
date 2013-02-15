@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   END
   s.add_dependency("prawn")
   s.add_dependency("rmagick")
-  s.has_rdoc = true
   s.extra_rdoc_files = %w{README.rdoc LICENSE COPYING}
   s.rdoc_options << "--title" << "prawn-fast-png documentation" <<
                     "--main"  << "README.rdoc" << "-q"
