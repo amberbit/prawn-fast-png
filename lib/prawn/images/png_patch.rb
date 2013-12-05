@@ -51,8 +51,8 @@ module Prawn
           raise Errors::UnsupportedImageType, "Can't handle #{bits}-bit PNG images"
         end
 
-        @img_data      = Zlib::Deflate.deflate(img_data)
-        @alpha_channel = Zlib::Deflate.deflate(alpha_channel)
+        @img_data      = img_data
+        @alpha_channel = alpha_channel
       end
     end
   end
