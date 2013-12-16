@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
     An extension of Prawn that improves the performance when embedding PNG
     images containing an alpha channel
   END
-  s.add_dependency("prawn")
+  s.add_dependency("prawn", '>= 0.13.0')
   s.add_dependency("rmagick")
   s.has_rdoc = true
   s.extra_rdoc_files = %w{README.rdoc LICENSE COPYING}
