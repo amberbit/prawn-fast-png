@@ -5,7 +5,11 @@ unless Object.const_defined?(:Prawn)
   raise %q{Prawn not loaded yet. Make sure you "require 'prawn'" or "require 'prawn/core'" before "require 'prawn/fast_png'"}
 end
 
-require 'RMagick'
+begin
+  require 'rmagick'
+rescue LoadError
+  require 'RMagick'
+end
 
 module Prawn
   module Images
